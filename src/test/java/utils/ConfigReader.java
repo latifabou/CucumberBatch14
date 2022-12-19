@@ -7,23 +7,23 @@ import java.util.Properties;
 
 public class ConfigReader {
     static Properties prop;
-    public static Properties readProperties(String filePath){
 
+    public static Properties readProperties(String filePath){
         try {
-            //we need to locate the file
-            FileInputStream fis=new FileInputStream(filePath);
-            //to load the file : it might have some input/output exceptions
-            prop=new Properties();
+            FileInputStream fis = new FileInputStream(filePath);
+            prop = new Properties();
             prop.load(fis);
         } catch (FileNotFoundException e) {
-           e.printStackTrace();
+            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
         return prop;
     }
+
     public static String getPropertyValue(String key){
-        //get the property is the method that will read the value as per the key provided
-       return prop.getProperty(key);
+        //get property is the method which will read the value as per the key provided
+        return prop.getProperty(key);
     }
+
 }

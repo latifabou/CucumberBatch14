@@ -1,0 +1,232 @@
+Class 1 -
+
+BDD - behavioral driven development -
+	Given
+	When
+	And
+	Then
+We use BDD scenarios - to give a clear understanding to other colleagues in the team
+
+
+To write the BDD scenarios in cucumber - we use special type of file
+
+User story 12345 - Search an employee
+
+Search by id
+Given user navigates to HRMS application
+When user enters valid username and password
+And user clicks on login button
+Then user navigates to dashboard page
+When user clicks on PIM option
+And user clicks on employee information button
+When user enters employee id
+And user clicks on search button
+Then user see employee information is displayed
+
+Search by name
+Given user navigates to HRMS application
+When user enters valid username and password
+And user clicks on login button
+Then user navigates to dashboard page
+When user clicks on PIM option
+And user clicks on employee information button
+When user enters valid employee name
+And user clicks on search button
+Then user see employee information is displayed
+
+Class 2 -
+
+Recap -
+      BDD - It allows us to write scenarios in gherkin language
+
+      Feature - User story
+      Scenario - Test case - every test case will be considered as scenario in BDD
+      Given - pre-requisite/pre-condition
+      When - perform actions
+      Then - Expected output
+      And - Supporting tag
+
+      Step definition - Cucumber provides you the snippet of step definition
+      In step definition, we write the code to perform actions which has been written in
+      the BDD statement
+
+      To execute all the feature files from one class, we need runner class
+
+To keep everything organised we need framework -
+Framework allows you to write simplified and organised code and
+it provides folder to structure which is easily understandable
+
+In framework, we have 2 separate branches for
+Java -  In java, we write all java classes
+Non - Java - In non-java, we write non java part such as features, files etc
+steps package - for all step definitions
+runners package - for all runner classes
+config directory - for all config files
+features directory - for all feature files
+
+Class 3 -
+    Recap - BDD - Behavioral driven development
+    because the explanation part was available in diagram
+
+Class 4 -
+    Recap -
+    Runner class - Cucumber options in runner class
+    features - to run the feature file, we provide a path to its repository
+    glue - the path of our step definitions package
+    dryRun - if we set it to true, it stops actual execution and scans all the steps quickly
+    and provide us missing step definition
+    monochrome - to remove irrelevant information from the console
+    plugin - pretty - to print the steps in the console
+    tags - to group the scenario for specific type of execution
+
+
+POM - page object model - it is a design pattern
+
+it allows QA's to keep object repository -
+in simple language, QA's write all the locators of the page in respective class
+
+LoginPage -
+DashboardPage -
+*******************************Class05********************************************
+why do we need runner class?
+ -to run our test cases according to our requirements(our needs, just change Tag name);
+ -I can generate a step definition( so I don't need to go to my feature to create step definition);
+ -I can execute my old test cases;
+ -I can decide what to execute what not to execute;
+ -I can print the steps along with the hierarchy available in the console using the keyword plugin = {"pretty"};
+ -I can generate the report;
+
+Why do we need Page Object Model(POM) in our framework?
+ It is design pattern to have organized code and easy to maintain structure;
+ according to it, we create a separate class(page) according to the screens available in the application and keep
+ all the locators in it.
+ meaning: if I have a login screen in my application, I will create a login page;
+ If I have a dashboard screen in my application, I will create a dashboard page ...
+ why do we need to do that? whatever locators or webElement available, we will segregate them
+ we create separate pages according to the screen, in case there is change, it will be easy to find the page and do it.
+
+ What is Page Factory?
+ It is a concept of selenium which we use to implement page object model design pattern which is responsible to
+ initialize all the objects of the class(locators/object repository).
+
+ Hooks-->PreCondition and post condition for the entire project
+ we write pre-condition and post condition using 2 hooks:
+@Before       :pre-condition needs to be mentioned in this
+@After        :post condition needs to be mentioned in this
+
+Rules-->hooks class must be created inside steps package
+
+Background--> same steps in feature file among all the scenarios should be a part of it.
+              it is applicable for only one feature file
+              it means for every feature file background will be different
+              steps which are common among all the scenarios of that feature file will be taken into the background
+              but make sure the flow in not broking, if the flow breaks then we can not take steps into the background
+              after that.
+
+Hooks and background:
+Hooks are applicable for whole project(all features files);
+Background is applicable for one feature file and varies from one file to file
+First hooks execute then background execute then scenario executes.
+
+********************************class06*******************************************************
+**Page Object model with page initializer class
+    in the initializer class, we initialize all the objects of page classes and call the method in the communMethod
+     class in the openBrowserAndLaunchApplication() method.
+
+**We create a collection point in steps classes:
+    -Methods called from communMethods class;
+    -Locators called from respective page classes using object of that class.
+
+**Parametrization testing:
+    1-We can add one employee using feature file: instead of passing hardcoded data, we pass values inside
+    the scenario such as "abc","xyz" etc.
+    2-To increase the scope of testing, we data driven testing concept: instead of scenario, we use scenario outline
+    with examples table. in examples table, we pass multiples data sets using keys and values(@outline).
+    3-Data table(@datatable) allows us to pass multiple sets of data without executing background
+
+    Outline-Example table-hooks and background execute every time as per the data set
+    Scenario-Data table-hooks and background execute just one time.
+
+ **Working with excel
+   -.xls-->HSSF
+   -.xlsx-->XSSf
+
+*****************************class07*********************************************************************
+
+**Parameters passing for adding employees
+   1-earlier approach was hardcoded data;
+   2-passing one set of data from config.properties;
+   3-passing one set of data from feature file;
+   4-scenario outline-example table(for passing data sets);
+   5-data table-hooks, background execute one time for multiples data;
+   6-excel- to pass large volume of data
+
+**Generate the report:
+   -To generate the report-we use html plugin from runner class
+     plugin = {"pretty","html:target/cucumber.html","json:target/cucumber.json","rerun:target/failed.txt"}
+    -When we generate any report, this should be under target folder
+ how to open the report? right click-open in-browser-chrome
+
+  **Screenshot:
+     -Screenshot method-->in cucumber, it accepts array of byte
+     -To get the unique screenshot name,we use implemented timestamp method
+     -we used scenario class of cucumber to get the details of execution
+
+
+ **Execute the code from pom.xml
+   -To acheive this, we use maven surefire plugin
+   -add <build> <\build> under <\dependencies>;
+ -go to https://maven.apache.org/surefire/maven-surefire-plugin
+ -click on Using TestNG-->scroll down until:Using Suite XML Files--> copy the
+ <plugins> <\plugins> and make one change take off
+
+   <suiteXmlFiles>
+       <suiteXmlFile>testng.xml</suiteXmlFile>
+         </suiteXmlFiles>
+  and add
+  <includes>
+  <include>  <\include>
+  </includes>
+
+    <plugins>
+       <plugin>
+         <groupId>org.apache.maven.plugins</groupId>
+         <artifactId>maven-surefire-plugin</artifactId>
+         <version>3.0.0-M7</version>
+         <configuration>
+            <includes>
+              <include>**/*SmokeRunner.java</include>
+                </includes>
+         </configuration>
+       </plugin>
+ </plugins>
+
+ **To run test case: click on Maven on the right hand corner-->Lifecycle-->double click on test.
+
+ *********************************class08**************************************************
+Maven cucumber reporting plugin we use to get more detailed and colorful report
+
+**Log files- when we execute or code, we need to sharpen our debugging skills.
+            -To have quick information about every step of execution, we need message in the form of report.
+            -To get the details added by us, we need to create log files
+            -To create log files, we use log4j concept.
+
+**Maven Lifecycle
+            -clean  :This will clean the target folder
+            -compile:source code converts into binary code
+            -test   :code will be tested in this lifecycle
+            -package:code will be package into jar files
+            -install:jars will be installed to local repo.m2
+            -deploy :here jars will go to remote repo
+
+**When we run a test: this will execute compile-install-deploy-test
+
+
+
+
+
+
+
+
+
+
