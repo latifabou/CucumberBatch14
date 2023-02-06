@@ -36,7 +36,7 @@ public class AddEmployeePage extends CommonMethods {
 
     @FindBy(id = "employeeId")
     public WebElement empIdLocator;
-    //input[@id='employeeId']
+
 
     @FindBy(id = "btnSave")
     public WebElement saveButton;

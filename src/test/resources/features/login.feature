@@ -14,6 +14,7 @@ Feature: Login functionality
     And user clicks on login button
     Then user is successfully logged in
 
+
   @tc1103
   Scenario: Invalid admin login
     #Given user is navigated to HRMS application

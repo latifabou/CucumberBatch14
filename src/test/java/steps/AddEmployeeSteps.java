@@ -8,13 +8,18 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import utils.CommonMethods;
 import utils.Constants;
+import utils.DatabaseReader;
 import utils.ExcelReader;
 
+import java.sql.ResultSetMetaData;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
 public class AddEmployeeSteps extends CommonMethods {
+    String employeeId;
+    String fName, lName;
+
     @When("user clicks on PIM option")
     public void user_clicks_on_pim_option() {
         // WebElement pimOption = driver.findElement(By.id("menu_pim_viewPimModule"));
@@ -48,6 +53,7 @@ public class AddEmployeeSteps extends CommonMethods {
         //   saveButton.click();
         click(addEmployee.saveButton);
     }
+
     @Then("employee added successfully")
     public void employee_added_successfully() {
         System.out.println("Employee Added");
@@ -55,6 +61,8 @@ public class AddEmployeeSteps extends CommonMethods {
 
     @When("user enter {string} and {string}")
     public void user_enter_and(String firstName, String lastName) {
+        fName = firstName;
+        lName = lastName;
         sendText(addEmployee.firstNameField, firstName);
         sendText(addEmployee.lastNameField, lastName);
     }
@@ -66,11 +74,11 @@ public class AddEmployeeSteps extends CommonMethods {
     }
 
     @When("user adds multiple employees and verify they are added successfully")
-    public void user_adds_multiple_employees_and_verify_they_are_added_successfully(DataTable dataTable) throws InterruptedException {
+    public void user_adds_multiple_employees_and_verify_they_are_added_successfully(DataTable dataTable)  {
         List<Map<String, String>> employeeNames = dataTable.asMaps();
 
         //getting the map from list of maps
-        for (Map<String, String> employee:employeeNames
+        for (Map<String, String> employee : employeeNames
         ) {
             //getting the  keys and values from every map
             String firstNameValue = employee.get("firstName");
@@ -82,11 +90,11 @@ public class AddEmployeeSteps extends CommonMethods {
             sendText(addEmployee.middleNameField, middleNameValue);
 
             click(addEmployee.saveButton);
-            Thread.sleep(2000);
+
             //till this point one employee has been added
             //verifying the employee is home-work
             click(dashboard.addEmployeeOption);
-            Thread.sleep(2000);
+
         }
     }
 
@@ -99,7 +107,7 @@ public class AddEmployeeSteps extends CommonMethods {
 
         //it returns one map from list of maps
         Iterator<Map<String, String>> itr = empFromExcel.iterator();
-        while (itr.hasNext()){
+        while (itr.hasNext()) {
             //it returns the key and value for employee from excel
             Map<String, String> mapNewEmp = itr.next();
 
@@ -108,7 +116,7 @@ public class AddEmployeeSteps extends CommonMethods {
             sendText(addEmployee.lastNameField, mapNewEmp.get("lastName"));
             String empIdValue = addEmployee.empIdLocator.getAttribute("value");
             sendText(addEmployee.photograph, mapNewEmp.get("photograh"));
-            if(!addEmployee.checkBox.isSelected()){
+            if (!addEmployee.checkBox.isSelected()) {
                 click(addEmployee.checkBox);
             }
             sendText(addEmployee.createusernameField, mapNewEmp.get("username"));
@@ -134,7 +142,7 @@ public class AddEmployeeSteps extends CommonMethods {
                     driver.findElements(By.xpath("//*[@id='resultTable']/tbody/tr"));
 
 
-            for (int i =0; i<rowData.size(); i++){
+            for (int i = 0; i < rowData.size(); i++) {
                 System.out.println("I am inside the loop and worried about josh");
                 //getting the text of every element from here and storing it into string
                 String rowText = rowData.get(i).getText();
@@ -155,5 +163,31 @@ public class AddEmployeeSteps extends CommonMethods {
         }
     }
 
+    @When("user captures employee Id")
+    public void user_captures_employee_id() {
+        employeeId = addEmployee.empIdLocator.getAttribute("value");
+    }
 
+
+    @Then("employee added successfully on the frontEnd")
+    public void employee_added_successfully_on_the_front_end() {
+        for (WebElement data : employeeList.rowData
+        ) {
+            String actualData = data.getText();
+            String expectedData = employeeId + " " + fName + " " + lName;
+            Assert.assertEquals(expectedData, actualData);
+        }
+    }
+
+    @Then("employee is displayed in database")
+    public void employee_is_displayed_in_database() {
+        List<Map<String, String>> listOfMapsFromData = DatabaseReader.getListOfMapsFromRSet
+                (DatabaseSteps.getfNameLNameQuery() + employeeId);
+        System.out.println(listOfMapsFromData);
+        String actualFirstName = listOfMapsFromData.get(0).get("emp_firstname");
+        String actualLastName = listOfMapsFromData.get(0).get("emp_lastname");
+        Assert.assertEquals(fName, actualFirstName);
+        Assert.assertEquals(lName, actualLastName);
+
+    }
 }

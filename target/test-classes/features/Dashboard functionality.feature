@@ -8,3 +8,4 @@ Feature: Dashboard functionality
     Then user verify dashboard page
     Then user verify all the dashboard tabs
       |Admin|PIM|Leave|Time|Recruitment|Performance|Dashboard|Directory|
+
