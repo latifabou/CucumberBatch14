@@ -26,9 +26,11 @@ public class CommonMethods extends PageInitializer {
         switch (ConfigReader.getPropertyValue("browser")) {
             case "chrome":
                 WebDriverManager.chromedriver().setup();
-                ChromeOptions chromeOptions = new ChromeOptions();
-                chromeOptions.setHeadless(true);
-                driver = new ChromeDriver(chromeOptions);
+                ChromeOptions chromeOp=new ChromeOptions();
+                driver=new ChromeDriver(chromeOp);
+                chromeOp.setHeadless(true);
+                chromeOp.addArguments("-no-sandbox");
+                chromeOp.addArguments("--disable-dev-shm-usage");
                 break;
             case "firefox":
                 WebDriverManager.firefoxdriver().setup();
