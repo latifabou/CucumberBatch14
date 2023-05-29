@@ -162,7 +162,7 @@ public class AddEmployeeSteps extends CommonMethods {
             System.out.println("33609960");
         }
     }
-
+//========================================================================================================
     @When("user captures employee Id")
     public void user_captures_employee_id() {
         employeeId = addEmployee.empIdLocator.getAttribute("value");
@@ -188,6 +188,19 @@ public class AddEmployeeSteps extends CommonMethods {
         String actualLastName = listOfMapsFromData.get(0).get("emp_lastname");
         Assert.assertEquals(fName, actualFirstName);
         Assert.assertEquals(lName, actualLastName);
-
     }
+    //=============================================================================================
+
+    @Then("added employee is available in my database")
+    public void added_employee_is_available_in_my_database() {
+        List<Map<String, String>> listOfMapsFromData = DatabaseReader.getListOfMapsFromRSet
+                (DatabaseSteps.getfNameLNameQuery() + employeeId);
+        System.out.println(listOfMapsFromData);
+        String actualFirstName = listOfMapsFromData.get(0).get("emp_firstname");
+        String actualLastName = listOfMapsFromData.get(0).get("emp_lastname");
+        Assert.assertEquals(fName, actualFirstName);
+        Assert.assertEquals(lName, actualLastName);
+    }
+
+
 }

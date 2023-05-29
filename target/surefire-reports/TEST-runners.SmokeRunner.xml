@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="runners.SmokeRunner" time="36.603" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="runners.SmokeRunner" time="24.364" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="C:\Users\Abdel\.jdks\corretto-17.0.4.1\bin"/>
-    <property name="sun.java.command" value="C:\Users\Abdel\AppData\Local\Temp\surefire15199729146458161555\surefirebooter-20230117220307763_3.jar C:\Users\Abdel\AppData\Local\Temp\surefire15199729146458161555 2023-01-17T22-03-07_344-jvmRun1 surefire-20230117220307763_1tmp surefire_0-20230117220307763_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\Abdel\AppData\Local\Temp\surefire13417292603190573295\surefirebooter-20230519204458143_3.jar C:\Users\Abdel\AppData\Local\Temp\surefire13417292603190573295 2023-05-19T20-44-57_758-jvmRun1 surefire-20230519204458143_1tmp surefire_0-20230519204458143_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\Abdel\CucumberBatch14\target\test-classes;C:\Users\Abdel\CucumberBatch14\target\classes;C:\Users\Abdel\.m2\repository\org\seleniumhq\selenium\selenium-java\3.141.59\selenium-java-3.141.59.jar;C:\Users\Abdel\.m2\repository\org\seleniumhq\selenium\selenium-api\3.141.59\selenium-api-3.141.59.jar;C:\Users\Abdel\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\3.141.59\selenium-chrome-driver-3.141.59.jar;C:\Users\Abdel\.m2\repository\org\seleniumhq\selenium\selenium-edge-driver\3.141.59\selenium-edge-driver-3.141.59.jar;C:\Users\Abdel\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\3.141.59\selenium-firefox-driver-3.141.59.jar;C:\Users\Abdel\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\3.141.59\selenium-ie-driver-3.141.59.jar;C:\Users\Abdel\.m2\repository\org\seleniumhq\selenium\selenium-opera-driver\3.141.59\selenium-opera-driver-3.141.59.jar;C:\Users\Abdel\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\3.141.59\selenium-remote-driver-3.141.59.jar;C:\Users\Abdel\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\3.141.59\selenium-safari-driver-3.141.59.jar;C:\Users\Abdel\.m2\repository\org\seleniumhq\selenium\selenium-support\3.141.59\selenium-support-3.141.59.jar;C:\Users\Abdel\.m2\repository\net\bytebuddy\byte-buddy\1.8.15\byte-buddy-1.8.15.jar;C:\Users\Abdel\.m2\repository\org\apache\commons\commons-exec\1.3\commons-exec-1.3.jar;C:\Users\Abdel\.m2\repository\com\google\guava\guava\25.0-jre\guava-25.0-jre.jar;C:\Users\Abdel\.m2\repository\com\google\code\findbugs\jsr305\1.3.9\jsr305-1.3.9.jar;C:\Users\Abdel\.m2\repository\org\checkerframework\checker-compat-qual\2.0.0\checker-compat-qual-2.0.0.jar;C:\Users\Abdel\.m2\repository\com\google\errorprone\error_prone_annotations\2.1.3\error_prone_annotations-2.1.3.jar;C:\Users\Abdel\.m2\repository\com\google\j2objc\j2objc-annotations\1.1\j2objc-annotations-1.1.jar;C:\Users\Abdel\.m2\repository\org\codehaus\mojo\animal-sniffer-annotations\1.14\animal-sniffer-annotations-1.14.jar;C:\Users\Abdel\.m2\repository\com\squareup\okhttp3\okhttp\3.11.0\okhttp-3.11.0.jar;C:\Users\Abdel\.m2\repository\com\squareup\okio\okio\1.14.0\okio-1.14.0.jar;C:\Users\Abdel\.m2\repository\io\cucumber\cucumber-java\6.9.1\cucumber-java-6.9.1.jar;C:\Users\Abdel\.m2\repository\io\cucumber\cucumber-core\6.9.1\cucumber-core-6.9.1.jar;C:\Users\Abdel\.m2\repository\io\cucumber\cucumber-gherkin\6.9.1\cucumber-gherkin-6.9.1.jar;C:\Users\Abdel\.m2\repository\io\cucumber\cucumber-gherkin-messages\6.9.1\cucumber-gherkin-messages-6.9.1.jar;C:\Users\Abdel\.m2\repository\io\cucumber\messages\13.2.1\messages-13.2.1.jar;C:\Users\Abdel\.m2\repository\io\cucumber\tag-expressions\3.0.0\tag-expressions-3.0.0.jar;C:\Users\Abdel\.m2\repository\io\cucumber\cucumber-expressions\10.3.0\cucumber-expressions-10.3.0.jar;C:\Users\Abdel\.m2\repository\io\cucumber\datatable\3.5.0\datatable-3.5.0.jar;C:\Users\Abdel\.m2\repository\io\cucumber\cucumber-plugin\6.9.1\cucumber-plugin-6.9.1.jar;C:\Users\Abdel\.m2\repository\io\cucumber\docstring\6.9.1\docstring-6.9.1.jar;C:\Users\Abdel\.m2\repository\io\cucumber\html-formatter\9.0.0\html-formatter-9.0.0.jar;C:\Users\Abdel\.m2\repository\io\cucumber\create-meta\2.0.4\create-meta-2.0.4.jar;C:\Users\Abdel\.m2\repository\org\apiguardian\apiguardian-api\1.1.0\apiguardian-api-1.1.0.jar;C:\Users\Abdel\.m2\repository\io\cucumber\cucumber-junit\6.9.1\cucumber-junit-6.9.1.jar;C:\Users\Abdel\.m2\repository\junit\junit\4.13.1\junit-4.13.1.jar;C:\Users\Abdel\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\Abdel\.m2\repository\io\github\bonigarcia\webdrivermanager\3.8.1\webdrivermanager-3.8.1.jar;C:\Users\Abdel\.m2\repository\org\slf4j\slf4j-api\1.7.25\slf4j-api-1.7.25.jar;C:\Users\Abdel\.m2\repository\com\google\code\gson\gson\2.8.5\gson-2.8.5.jar;C:\Users\Abdel\.m2\repository\org\apache\commons\commons-lang3\3.8.1\commons-lang3-3.8.1.jar;C:\Users\Abdel\.m2\repository\org\apache\httpcomponents\httpclient\4.5.6\httpclient-4.5.6.jar;C:\Users\Abdel\.m2\repository\org\apache\httpcomponents\httpcore\4.4.10\httpcore-4.4.10.jar;C:\Users\Abdel\.m2\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;C:\Users\Abdel\.m2\repository\org\rauschig\jarchivelib\1.0.0\jarchivelib-1.0.0.jar;C:\Users\Abdel\.m2\repository\org\jsoup\jsoup\1.11.3\jsoup-1.11.3.jar;C:\Users\Abdel\.m2\repository\org\apache\poi\poi-ooxml\4.1.2\poi-ooxml-4.1.2.jar;C:\Users\Abdel\.m2\repository\org\apache\poi\poi-ooxml-schemas\4.1.2\poi-ooxml-schemas-4.1.2.jar;C:\Users\Abdel\.m2\repository\org\apache\xmlbeans\xmlbeans\3.1.0\xmlbeans-3.1.0.jar;C:\Users\Abdel\.m2\repository\org\apache\commons\commons-compress\1.19\commons-compress-1.19.jar;C:\Users\Abdel\.m2\repository\com\github\virtuald\curvesapi\1.06\curvesapi-1.06.jar;C:\Users\Abdel\.m2\repository\org\apache\poi\poi\4.1.2\poi-4.1.2.jar;C:\Users\Abdel\.m2\repository\commons-codec\commons-codec\1.13\commons-codec-1.13.jar;C:\Users\Abdel\.m2\repository\org\apache\commons\commons-collections4\4.4\commons-collections4-4.4.jar;C:\Users\Abdel\.m2\repository\org\apache\commons\commons-math3\3.6.1\commons-math3-3.6.1.jar;C:\Users\Abdel\.m2\repository\com\zaxxer\SparseBitSet\1.2\SparseBitSet-1.2.jar;C:\Users\Abdel\.m2\repository\commons-io\commons-io\2.8.0\commons-io-2.8.0.jar;C:\Users\Abdel\.m2\repository\log4j\log4j\1.2.16\log4j-1.2.16.jar;C:\Users\Abdel\.m2\repository\mysql\mysql-connector-java\8.0.28\mysql-connector-java-8.0.28.jar;C:\Users\Abdel\.m2\repository\com\google\protobuf\protobuf-java\3.11.4\protobuf-java-3.11.4.jar;C:\Users\Abdel\.m2\repository\io\rest-assured\rest-assured\4.5.1\rest-assured-4.5.1.jar;C:\Users\Abdel\.m2\repository\org\codehaus\groovy\groovy\3.0.9\groovy-3.0.9.jar;C:\Users\Abdel\.m2\repository\org\codehaus\groovy\groovy-xml\3.0.9\groovy-xml-3.0.9.jar;C:\Users\Abdel\.m2\repository\org\apache\httpcomponents\httpmime\4.5.13\httpmime-4.5.13.jar;C:\Users\Abdel\.m2\repository\org\hamcrest\hamcrest\2.1\hamcrest-2.1.jar;C:\Users\Abdel\.m2\repository\org\ccil\cowan\tagsoup\tagsoup\1.2.1\tagsoup-1.2.1.jar;C:\Users\Abdel\.m2\repository\io\rest-assured\json-path\4.5.1\json-path-4.5.1.jar;C:\Users\Abdel\.m2\repository\org\codehaus\groovy\groovy-json\3.0.9\groovy-json-3.0.9.jar;C:\Users\Abdel\.m2\repository\io\rest-assured\rest-assured-common\4.5.1\rest-assured-common-4.5.1.jar;C:\Users\Abdel\.m2\repository\io\rest-assured\xml-path\4.5.1\xml-path-4.5.1.jar;C:\Users\Abdel\.m2\repository\org\json\json\20180813\json-20180813.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\Abdel\AppData\Local\Temp\surefire15199729146458161555\surefirebooter-20230117220307763_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\Abdel\AppData\Local\Temp\surefire13417292603190573295\surefirebooter-20230519204458143_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="17.0.4.1+9-LTS"/>
@@ -51,31 +51,30 @@
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="sun.os.patch.level" value=""/>
     <property name="native.encoding" value="Cp1252"/>
-    <property name="java.library.path" value="C:\Users\Abdel\.jdks\corretto-17.0.4.1\bin;C:\windows\Sun\Java\bin;C:\windows\system32;C:\windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\windows\System32\OpenSSH\;C:\Program Files\Java\jdk-17.0.4.1\bin;C:\Program Files\Java\jdk1.8.0_202\bin;C:\Program Files\Git\cmd;C:\Program Files\apache-maven-3.8.6\bin;C:\Users\Abdel\AppData\Local\Microsoft\WindowsApps;;."/>
+    <property name="java.library.path" value="C:\Users\Abdel\.jdks\corretto-17.0.4.1\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Java\jdk-17.0.4.1\bin;C:\Program Files\Java\jdk1.8.0_202\bin;C:\Program Files\Git\cmd;C:\Program Files\apache-maven-3.8.6\bin;;C:\Program Files\Docker\Docker\resources\bin;C:\Users\Abdel\AppData\Local\Microsoft\WindowsApps;;."/>
     <property name="java.vm.info" value="mixed mode, sharing"/>
     <property name="java.vendor" value="Amazon.com Inc."/>
     <property name="java.vm.version" value="17.0.4.1+9-LTS"/>
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="61.0"/>
   </properties>
-  <testcase name="Adding one employee using feature file #2" classname="Add Employee" time="35.775">
+  <testcase name="add employee from frontend and get data from db to verify it" classname="Add Employee" time="23.531">
     <system-out><![CDATA[
 @database
-Scenario: Adding one employee using feature file     # src/test/resources/features/AddEmployee.feature:46
-  When user enters valid username and valid password # steps.LoginSteps.user_enters_valid_username_and_valid_password()
-  And user clicks on login button                    # steps.LoginSteps.user_clicks_on_login_button()
+Scenario: add employee from frontend and get data from db to verify it # src/test/resources/features/AddEmployee.feature:54
+  When user enters valid username and valid password                   # steps.LoginSteps.user_enters_valid_username_and_valid_password()
+  And user clicks on login button                                      # steps.LoginSteps.user_clicks_on_login_button()
 Test case is passed
-  Then user is successfully logged in                # steps.LoginSteps.user_is_successfully_logged_in()
-  When user clicks on PIM option                     # steps.AddEmployeeSteps.user_clicks_on_pim_option()
-  And user clicks on Add Employee button             # steps.AddEmployeeSteps.user_clicks_on_add_employee_button()
-  And user enter "HassanAhmad" and "Salama"          # steps.AddEmployeeSteps.user_enter_and(java.lang.String,java.lang.String)
-  And user captures employee Id                      # steps.AddEmployeeSteps.user_captures_employee_id()
-  And user clicks on save button                     # steps.AddEmployeeSteps.user_clicks_on_save_button()
-  Then employee added successfully on the frontEnd   # steps.AddEmployeeSteps.employee_added_successfully_on_the_front_end()
-[{emp_firstname=HassanAhmad, emp_lastname=Salama}]
-  And employee is displayed in database              # steps.AddEmployeeSteps.employee_is_displayed_in_database()
+  Then user is successfully logged in                                  # steps.LoginSteps.user_is_successfully_logged_in()
+  When user clicks on PIM option                                       # steps.AddEmployeeSteps.user_clicks_on_pim_option()
+  And user clicks on Add Employee button                               # steps.AddEmployeeSteps.user_clicks_on_add_employee_button()
+  And user enter "Mbark" and "Boussoufa"                               # steps.AddEmployeeSteps.user_enter_and(java.lang.String,java.lang.String)
+  And user captures employee Id                                        # steps.AddEmployeeSteps.user_captures_employee_id()
+  And user clicks on save button                                       # steps.AddEmployeeSteps.user_clicks_on_save_button()
+[{emp_firstname=Mbark, emp_lastname=Boussoufa}]
+  Then added employee is available in my database                      # steps.AddEmployeeSteps.added_employee_is_available_in_my_database()
 
-    Embedding Adding one employee using feature file [image/png 130933 bytes]
+    Embedding add employee from frontend and get data from db to verify it [image/png 59934 bytes]
 
 ]]></system-out>
     <system-err><![CDATA[SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
@@ -84,11 +83,11 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 log4j:WARN No appenders could be found for logger (org.apache.http.client.protocol.RequestAddCookies).
 log4j:WARN Please initialize the log4j system properly.
 log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
-Starting ChromeDriver 109.0.5414.74 (e7c5703604daa9cc128ccf5a5d3e993513758913-refs/branch-heads/5414@{#1172}) on port 5293
+Starting ChromeDriver 113.0.5672.63 (0e1a4471d5ae5bf128b1bd8f4d627c8cbd55f70c-refs/branch-heads/5672@{#912}) on port 55392
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-Jan 17, 2023 10:03:29 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+May 19, 2023 8:45:04 PM org.openqa.selenium.remote.ProtocolHandshake createSession
 INFO: Detected dialect: W3C
 log4j:WARN Continuable parsing error 5 and column 84
 log4j:WARN Attribute "xmlns:log4j" with value "https://jakarta.apache.org/log4j/" must have a value of "http://jakarta.apache.org/log4j/".

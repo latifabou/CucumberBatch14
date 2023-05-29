@@ -32,10 +32,12 @@ public class ExcelReader {
     }
     //this method will give the row count
     public static int getRowCount(){
+        //the number of physically defined rows in this sheet. Not include the empty row
         return sheet.getPhysicalNumberOfRows();
     }
     //this method will give the column count
     public static int getColsCount(int rowIndex){
+        //getPhysicalNumberOfCells returns the number of cell in a row that have a content
         return sheet.getRow(rowIndex).getPhysicalNumberOfCells();
     }
 

@@ -13,7 +13,7 @@ import org.junit.runner.RunWith;
         //it will quickly scan all the gherkin steps whether they are implemented or not
         //when we set dry run to false, it starts execution again
         dryRun = false,
-        tags = "@smoke1 or @regression1",
+        tags = "@api",
         //to remove irrelavant information from console, you need to set monochrome to true
         monochrome = true,
         //pretty keywords prints the steps in the console to increase readability

@@ -11,6 +11,7 @@ public class ConfigReader {
     public static Properties readProperties(String filePath){
         try {
             FileInputStream fis = new FileInputStream(filePath);
+            //to read and write data to .prop files
             prop = new Properties();
             prop.load(fis);
         } catch (FileNotFoundException e) {
